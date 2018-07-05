@@ -59,7 +59,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 	public Category getCategory(int categoryId) {
 	
 		try{
-			System.out.println("we are in getactegory methd");
+			System.out.println("we are in getactegory methd ");
 			Session sess=sessfact.getCurrentSession();
 			Category categ=(Category)sess.get(Category.class, categoryId);
 			
@@ -74,11 +74,11 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 	public List<Category> listcateg() {
 		try{
-			System.out.println("we are in list category method");
+			System.out.println("we are in list category method *******************S");
 			Session sess=sessfact.openSession();
 			Query query=sess.createQuery("From Category");
 			List<Category> listcateg=query.list();
-			sess.close();
+		
 			return listcateg;
 		}
 		catch(Exception e){

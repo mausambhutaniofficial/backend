@@ -28,7 +28,7 @@ public class SupplierDAOTestCase {
 			System.out.println("supplier null");
 			
 		}
-		Supplier supplier=new Supplier();
+/*		Supplier supplier=new Supplier();
 		supplier.setSuppId(2);
 		supplier.setSupName("S1");
 		supplier.setSupAddr("A1");
@@ -39,8 +39,15 @@ public class SupplierDAOTestCase {
 	System.out.println(supplier.getSupName());
 	System.out.println(supplier.getSupAddr());
 	suppDAO.addSupplier(supplier);
-	}	
+	}*/	
 	
+	Supplier supplier=suppDAO.getSupplier(40);
+	supplier.setSupName("S3");
+	supplier.setSupAddr("A3");
+	
+	suppDAO.updateSupplier(supplier);
+}
+	@Ignore
 	@Test
 	public void addSupplierTest(){
 		Supplier supplier=new Supplier();

@@ -67,7 +67,7 @@ SessionFactory sessfact;
 	public List<Supplier> listsupplier() {
 		try{
 			Session sess=sessfact.getCurrentSession();
-			Query query=sess.createQuery("From Category");
+			Query query=sess.createQuery("From Supplier");
 			List<Supplier> listsupplier=query.list();
 			return listsupplier;
 		}

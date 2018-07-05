@@ -61,7 +61,7 @@ public class ProductDAOImpl implements ProductDAO {
 
 	public Product getProduct(int prodId) {
 		try{
-			System.out.println("we are in get product methd");
+			System.out.println("we are in get product methd ********************");
 			Session sess=sessfact.openSession();
 			Product product=(Product)sess.get(Product.class, prodId);
 			sess.close();

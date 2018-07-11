@@ -49,7 +49,7 @@ public class ProductDAOImpl implements ProductDAO {
 
 		try{
 			
-			sessfact.getCurrentSession().saveOrUpdate(product);
+			sessfact.getCurrentSession().update(product);
 			return true;
 		}
 		

@@ -52,9 +52,9 @@ SessionFactory sessfact;
 	public Supplier getSupplier(int suppId) {
 		try{
 			System.out.println("we are in get supplier methd");
-			Session sess=sessfact.getCurrentSession();
+			Session sess=sessfact.openSession();
 			Supplier supplier=(Supplier)sess.get(Supplier.class, suppId);
-			
+			sess.close();
 			return supplier;
 		}
 		
@@ -66,9 +66,10 @@ SessionFactory sessfact;
 
 	public List<Supplier> listsupplier() {
 		try{
-			Session sess=sessfact.getCurrentSession();
+			Session sess=sessfact.openSession();
 			Query query=sess.createQuery("From Supplier");
 			List<Supplier> listsupplier=query.list();
+			sess.close();
 			return listsupplier;
 		}
 		catch(Exception e){

@@ -60,9 +60,9 @@ public class CategoryDAOImpl implements CategoryDAO {
 	
 		try{
 			System.out.println("we are in getactegory methd ");
-			Session sess=sessfact.getCurrentSession();
+			Session sess=sessfact.openSession();
 			Category categ=(Category)sess.get(Category.class, categoryId);
-			
+			sess.close();
 			return categ;
 		}
 		
@@ -78,7 +78,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 			Session sess=sessfact.openSession();
 			Query query=sess.createQuery("From Category");
 			List<Category> listcateg=query.list();
-		
+		sess.close();
 			return listcateg;
 		}
 		catch(Exception e){

@@ -24,7 +24,7 @@ import com.niit.model.UserDetail;
 @EnableTransactionManagement
 public class DBconfig {
 	
-	@Bean
+	@Bean(name="dataSource")
 	public DataSource getH2DataSource(){
 		DriverManagerDataSource datasrc=new DriverManagerDataSource();
 		datasrc.setDriverClassName("org.h2.Driver");

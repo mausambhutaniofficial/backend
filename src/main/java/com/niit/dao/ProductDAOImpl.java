@@ -21,7 +21,7 @@ public class ProductDAOImpl implements ProductDAO {
 		
 		try{
 			
-			sessfact.getCurrentSession().save(product);
+			sessfact.getCurrentSession().persist(product);
 			return true;
 		}
 		
@@ -48,7 +48,14 @@ public class ProductDAOImpl implements ProductDAO {
 	public boolean updateProduct(Product product) {
 
 		try{
-			
+			product.setProdId(product.getProdId());
+			product.setProdName(product.getProdName());
+			product.setProdDesc(product.getProdDesc());
+			product.setPrice(product.getPrice());
+			product.setCategoryId(product.getCategoryId());
+			product.setStock(product.getStock());
+			product.setSuppId(product.getSuppId());
+			System.out.println(product.getProdId()+product.getProdName()+product.getProdDesc()+product.getPrice()+product.getCategoryId()+product.getStock()+product.getSuppId());
 			sessfact.getCurrentSession().update(product);
 			return true;
 		}

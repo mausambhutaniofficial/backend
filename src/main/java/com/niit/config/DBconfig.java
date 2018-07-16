@@ -12,8 +12,10 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.niit.dao.UserDetailDAO;
+import com.niit.model.CartItem;
 import com.niit.model.Category;
+import com.niit.model.Coupon;
+import com.niit.model.OrderDetail;
 import com.niit.model.Product;
 import com.niit.model.Supplier;
 import com.niit.model.UserDetail;
@@ -48,6 +50,10 @@ public class DBconfig {
 		sessfactbulid.addAnnotatedClass(Supplier.class);
 		sessfactbulid.addAnnotatedClass(Product.class);
 		sessfactbulid.addAnnotatedClass(UserDetail.class);
+		sessfactbulid.addAnnotatedClass(CartItem.class);
+		sessfactbulid.addAnnotatedClass(OrderDetail.class);
+		
+		sessfactbulid.addAnnotatedClass(Coupon.class);
 		SessionFactory sessfact=sessfactbulid.buildSessionFactory();
 		
 		System.out.println("Session factory object created");
